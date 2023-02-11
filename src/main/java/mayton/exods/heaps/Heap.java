@@ -1,29 +1,26 @@
 package mayton.exods.heaps;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
 import java.util.Iterator;
 
 public interface Heap<T extends Comparable> {
 
-    boolean insert(@Nonnull T item);
+    boolean insert(T item);
 
     int size();
 
-    @Nonnull T peekTopItem();
+    T peekTopItem();
 
-    @Nullable T pollTopItem();
+    T pollTopItem();
 
-    void replaceTopItem(@Nonnull T item);
+    void replaceTopItem(T item);
 
-    @Nonnull Iterator<T> items();
+    Iterator<T> items();
 
-    default void merge(@Nonnull Heap<T> argHeap) {
+    default void merge(Heap<T> argHeap) {
         merge(argHeap.items());
     }
 
-    default void merge(@Nonnull Iterator<T> comparables) {
+    default void merge(Iterator<T> comparables) {
         comparables.forEachRemaining(item -> insert(item));
     }
 

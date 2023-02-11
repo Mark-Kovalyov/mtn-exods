@@ -1,5 +1,6 @@
 package mayton.exods.rope;
 
+
 public class RopeNode {
 
     public String value;

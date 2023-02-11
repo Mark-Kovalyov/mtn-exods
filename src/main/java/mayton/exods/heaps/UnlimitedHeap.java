@@ -5,7 +5,6 @@ import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -105,7 +104,7 @@ public class UnlimitedHeap<T extends Comparable<T>> implements Heap<T> {
     }
 
     @Override
-    public void merge(@Nonnull Iterator<T> comparables) {
+    public void merge(Iterator<T> comparables) {
         // TODO: This is not perfect way to merge 2 heaps.
         comparables.forEachRemaining(x -> objects.add(x));
         size = objects.size();
